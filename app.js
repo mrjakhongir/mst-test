@@ -1,6 +1,7 @@
 const HAMBURGER = document.querySelector(".hamburger");
 const NAV_ITEMS = document.querySelector(".nav-items");
 const NAV_ITEM = document.querySelectorAll(".nav-item");
+const HEADER_NAV = document.querySelector(".header__top");
 
 HAMBURGER.addEventListener("click", () => {
   HAMBURGER.classList.toggle("hamburger-open");
@@ -27,3 +28,11 @@ function disableScroll() {
 function enableScroll() {
   document.body.style.overflow = "auto";
 }
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 30) {
+    HEADER_NAV.classList.add("header__top--fixed");
+  } else {
+    HEADER_NAV.classList.remove("header__top--fixed");
+  }
+});
